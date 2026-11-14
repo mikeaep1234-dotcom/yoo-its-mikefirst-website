@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>vinland
+    </title>
+</head>
+<body>
+
+    <h1>Mike's First Web 🥹</h1>
+
+    <h2>Welcome gng 👀</h2>
+
+    <p>Wanna hear a joke, gng?</p>
+
+    <p>10 jokes for just 50 birr 🫩</p>
+
+    <button onclick="buyJokes()">Pay 50 Birr 💸</button>
+
+    <h2 id="joke">Don't be shy gng 🥹</h2>
+
+    <button id="next" onclick="nextJoke()" disabled>
+        Next joke 👀
+    </button>
+
+    <p id="count"></p>
+    <h3 id="ending"></h3>
+
+<script>
+
+let jokes = [
+    "3000 birr alew, bro thinks he's Elon Musk 🫩",
+    "50 birr alew and suddenly he's financially stable 😭",
+    "Ewnet bel gng, where did the money go? 👀",
+    "Bro has 50 birr but 3000 birr dreams 🥹",
+    "Yoni said trust the process. Which process gng? 💀",
+    "Zender's bank account needs emotional support 🫩",
+    "3000 birr disappeared. Even the police are confused 😭",
+    "50 birr in the pocket, millionaire in the imagination 👀",
+    "Ewnet bel, are we rich or just delusional? 🥹",
+    "Mike, Zender and Yoni. Three legends, zero financial stability 💀"
+];
+
+let current = 0;
+
+function buyJokes() {
+    document.getElementById("next").disabled = false;
+    document.querySelector("button").disabled = true;
+    nextJoke();
+}
+
+function nextJoke() {
+    if (current < 10) {
+        document.getElementById("joke").innerText = jokes[current];
+        current++;
+        document.getElementById("count").innerText =
+            "Joke " + current + "/10 👀";
+    }
+
+    if (current === 10) {
+        document.getElementById("next").disabled = true;
+        document.getElementById("ending").innerText =
+            "THE TRIO: MIKE, ZENDER & YONI 🥹";
+    }
+}
+
+</script>
+
+</body>
+</html>
